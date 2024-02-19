@@ -35,3 +35,9 @@ for (int i = 0; i < str.Length; i++)
         x++;
     }
 }
+
+// Выводим все строки из массива `NewStr`.
+foreach (var item in NewStr)
+{
+    Console.Write($"[{item}] ");
+}
