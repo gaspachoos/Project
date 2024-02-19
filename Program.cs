@@ -104,3 +104,11 @@ void CreateNewString(string[] str, string[] newStr, int i, ref int j)
     // Рекурсивно вызываем CreateNewString для следующего элемента.
     CreateNewString(str, newStr, i + 1, ref j);
 }
+
+string[] str = FillArr(new string[new Random().Next(1, 11)], 0);
+
+int counter = CountReqElements(str, 0);
+
+string[] newStr = new string[counter];
+int j = 0;
+CreateNewString(str, newStr, 0, ref j);
