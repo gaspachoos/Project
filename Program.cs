@@ -66,3 +66,21 @@ string[] FillArr(string[] str, int i)
     // Возвращаем массив после заполнения.
     return str;
 }
+
+// Функция для подсчета элементов в массиве, чей размер <= 3.
+int CountReqElements(string[] str, int index)
+{
+    if (index >= str.Length)
+    {
+        return 0;
+    }
+
+    // Если размер текущего элемента <= 3, увеличиваем счетчик на 1 и рекурсивно вызываем CountReqElements для следующего элемента.
+    if (str[index].Length <= 3)
+    {
+        return 1 + CountReqElements(str, index + 1);
+    }
+
+    // Иначе просто рекурсивно вызываем CountReqElements для следующего элемента.
+    return CountReqElements(str, index + 1);
+}
