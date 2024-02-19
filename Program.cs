@@ -24,3 +24,14 @@ for (int i = 0; i < str.Length; i++)
 // Создаем новый массив `NewStr` для хранения строк, удовлетворяющих условию.
 string[] NewStr = new string[j];
 int x = 0;
+
+// Копируем строки, удовлетворяющие условию, в новый массив `NewStr`.
+for (int i = 0; i < str.Length; i++)
+{
+    int Length = str[i].Length;
+    if (Length <= 3)
+    {
+        NewStr[x] = str[i];
+        x++;
+    }
+}
