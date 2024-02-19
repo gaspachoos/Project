@@ -48,67 +48,67 @@ foreach (var item in NewStr)
 Демонстрация альтернативного способа решения задачи.
 */
 
-// Функция для заполнения массива строк пользовательским вводом.
-string[] FillArr(string[] str, int i)
-{
-    if (i >= str.Length)
-    {
-        return str;
-    }
+// // Функция для заполнения массива строк пользовательским вводом.
+// string[] FillArr(string[] str, int i)
+// {
+//     if (i >= str.Length)
+//     {
+//         return str;
+//     }
     
-    // Запрашиваем у пользователя ввод для элемента массива и сохраняем его в текущий элемент.
-    Console.Write($"Введите {i} элемент массива: ");
-    str[i] = Console.ReadLine()!;
+//     // Запрашиваем у пользователя ввод для элемента массива и сохраняем его в текущий элемент.
+//     Console.Write($"Введите {i} элемент массива: ");
+//     str[i] = Console.ReadLine()!;
     
-    // Рекурсивно вызываем FillArr для следующего элемента.
-    FillArr(str, i + 1);
+//     // Рекурсивно вызываем FillArr для следующего элемента.
+//     FillArr(str, i + 1);
     
-    // Возвращаем массив после заполнения.
-    return str;
-}
+//     // Возвращаем массив после заполнения.
+//     return str;
+// }
 
-// Функция для подсчета элементов в массиве, чей размер <= 3.
-int CountReqElements(string[] str, int index)
-{
-    if (index >= str.Length)
-    {
-        return 0;
-    }
+// // Функция для подсчета элементов в массиве, чей размер <= 3.
+// int CountReqElements(string[] str, int index)
+// {
+//     if (index >= str.Length)
+//     {
+//         return 0;
+//     }
 
-    // Если размер текущего элемента <= 3, увеличиваем счетчик на 1 и рекурсивно вызываем CountReqElements для следующего элемента.
-    if (str[index].Length <= 3)
-    {
-        return 1 + CountReqElements(str, index + 1);
-    }
+//     // Если размер текущего элемента <= 3, увеличиваем счетчик на 1 и рекурсивно вызываем CountReqElements для следующего элемента.
+//     if (str[index].Length <= 3)
+//     {
+//         return 1 + CountReqElements(str, index + 1);
+//     }
 
-    // Иначе просто рекурсивно вызываем CountReqElements для следующего элемента.
-    return CountReqElements(str, index + 1);
-}
+//     // Иначе просто рекурсивно вызываем CountReqElements для следующего элемента.
+//     return CountReqElements(str, index + 1);
+// }
 
-// Функция для создания нового массива строк на основе условия и вывода на экран.
-void CreateNewString(string[] str, string[] newStr, int i, ref int j)
-{
-    if (i >= str.Length)
-    {
-        return;
-    }
+// // Функция для создания нового массива строк на основе условия и вывода на экран.
+// void CreateNewString(string[] str, string[] newStr, int i, ref int j)
+// {
+//     if (i >= str.Length)
+//     {
+//         return;
+//     }
 
-    // Если размер текущего элемента <= 3, добавляем его в новый массив и увеличиваем счетчик `j`.
-    if (str[i].Length <= 3)
-    {
-        newStr[j] = str[i];
-        Console.Write($"[{newStr[j]}] ");
-        j++; 
-    }
+//     // Если размер текущего элемента <= 3, добавляем его в новый массив и увеличиваем счетчик `j`.
+//     if (str[i].Length <= 3)
+//     {
+//         newStr[j] = str[i];
+//         Console.Write($"[{newStr[j]}] ");
+//         j++; 
+//     }
     
-    // Рекурсивно вызываем CreateNewString для следующего элемента.
-    CreateNewString(str, newStr, i + 1, ref j);
-}
+//     // Рекурсивно вызываем CreateNewString для следующего элемента.
+//     CreateNewString(str, newStr, i + 1, ref j);
+// }
 
-string[] str = FillArr(new string[new Random().Next(1, 11)], 0);
+// string[] str = FillArr(new string[new Random().Next(1, 11)], 0);
 
-int counter = CountReqElements(str, 0);
+// int counter = CountReqElements(str, 0);
 
-string[] newStr = new string[counter];
-int j = 0;
-CreateNewString(str, newStr, 0, ref j);
+// string[] newStr = new string[counter];
+// int j = 0;
+// CreateNewString(str, newStr, 0, ref j);
