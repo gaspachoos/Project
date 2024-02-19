@@ -20,3 +20,7 @@ for (int i = 0; i < str.Length; i++)
         j++;
     }
 }
+
+// Создаем новый массив `NewStr` для хранения строк, удовлетворяющих условию.
+string[] NewStr = new string[j];
+int x = 0;
