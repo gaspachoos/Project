@@ -84,3 +84,23 @@ int CountReqElements(string[] str, int index)
     // Иначе просто рекурсивно вызываем CountReqElements для следующего элемента.
     return CountReqElements(str, index + 1);
 }
+
+// Функция для создания нового массива строк на основе условия и вывода на экран.
+void CreateNewString(string[] str, string[] newStr, int i, ref int j)
+{
+    if (i >= str.Length)
+    {
+        return;
+    }
+
+    // Если размер текущего элемента <= 3, добавляем его в новый массив и увеличиваем счетчик `j`.
+    if (str[i].Length <= 3)
+    {
+        newStr[j] = str[i];
+        Console.Write($"[{newStr[j]}] ");
+        j++; 
+    }
+    
+    // Рекурсивно вызываем CreateNewString для следующего элемента.
+    CreateNewString(str, newStr, i + 1, ref j);
+}
